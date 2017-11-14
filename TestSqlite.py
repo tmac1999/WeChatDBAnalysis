@@ -60,7 +60,7 @@ if __name__ == '__main__':
     print 'realChatMsgCount:', realChatMsgCount, 'otherMsgCount:', otherMsgCount, 'theRestMsgCount:', totalMsgCount - realChatMsgCount - otherMsgCount
     # print 'noColonRowCount:', noColonRowCount
 
-
+    # todo 在Friend表中找到昵称 来对群聊username进行匹配，同时绘制饼状图 or条形图
     def printSet(set):
         for single in set:
             print single
