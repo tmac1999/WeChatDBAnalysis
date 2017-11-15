@@ -1,12 +1,12 @@
 #!/usr/bin/python
 # -*- coding:utf8 -*- 为了支持中文注释
 import sqlite3
+
 import numpy as np
+
 from ChatTable import ChatTable
 from FriendAnalysis import FriendAnalysis
-from Friend import Friend
-
-from matplotlib_test import ShowChart
+from test.matplotlib_test import ShowChart
 
 
 def prn_obj(obj):
