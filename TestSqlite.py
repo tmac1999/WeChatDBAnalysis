@@ -1,4 +1,9 @@
+#!/usr/bin/python
+# -*- coding:utf8 -*- 为了支持中文注释
+import hashlib
 import sqlite3
+
+from FriendAnalysis import FriendAnalysis
 
 if __name__ == '__main__':
 
@@ -50,9 +55,15 @@ if __name__ == '__main__':
     print 'total msg count =', totalMsgCount
     realChatMsgCount = 06
     otherMsgCount = 0
+    friend_analysis = FriendAnalysis()
+    dbLocation = '/Users/lianhua/Downloads/WCDB_Contact.sqlite'
+    nameDict = friend_analysis.openDB(dbLocation)
     for single in d:
         if single.__len__() < 50:
-            print single, ":", d[single]
+            hexdigest = hashlib.md5(single).hexdigest()
+            friend = nameDict.get(hexdigest)
+            if friend != None:
+                print single, ":", d[single], friend.contactRemark, hexdigest
             realChatMsgCount += d[single]
         else:
             otherMsgCount += d[single]
